@@ -6,123 +6,128 @@
   <title>3D 模型展示-滾球大象</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f4f7f9, #e1e8ee);
+      color: #2c3e50;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #333;
+      background-color: #2c3e50;
       color: white;
-      padding: 1rem;
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
+
     header h1 {
       font-size: 1.5rem;
       margin: 0;
     }
-    .button {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #007BFF;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
+
     .container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      height: calc(100vh - 70px);
-    }
-    .left {
-      flex: 1;
-      min-width: 300px;
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 1000px;
+      margin: 2rem auto;
       padding: 1rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
     }
-    model-viewer {
-      width: 100%;
-      height: 100%;
-      max-height: 500px;
-      background-color: #eee;
-    }
-    .right {
-      width: 300px;
-      background-color: #fafafa;
-      border-left: 1px solid #ddd;
-      padding: 1rem;
-      overflow-y: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    td {
-      border: 1px solid #ccc;
-      padding: 0.5rem;
+
+    .image-wrapper {
       text-align: center;
-      height: 50px;
+      margin-bottom: 1.5rem;
     }
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .right {
-        width: 100%;
-        border-left: none;
-        border-top: 1px solid #ddd;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
+
+    .image-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box {
+      flex: 1 1 200px;
+      background: #f0f3f7;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #34495e;
+    }
+
+    .description {
+      padding: 1rem;
+      background: #f9fafc;
+      border-left: 4px solid #3498db;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
+
 <body>
   <header>
     <a href="list.html" class="button">瀏覽其他</a>
     <h1>3D 模型展示-滾球大象</h1>
   </header>
+
   <div class="container">
-    <div class="left">
+    <div class="image-wrapper">
       <model-viewer src="elephant.glb" alt="3D 模型" auto-rotate camera-controls></model-viewer>
     </div>
-    <div class="right">
-      <table>
-        <tr>
-          <td>正方形</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>三角形</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>大三角</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>文字7</td>
-          <td>文字8</td>
-        </tr>
-      </table>
+
+    <div class="info-section">
+      <div class="info-box">
+        <h3>分類</h3>
+        <p>哺乳綱 - 長鼻目 - 象科</p>
+      </div>
+      <div class="info-box">
+        <h3>保育等級</h3>
+        <p>瀕危（Endangered）</p>
+      </div>
+      <div class="info-box">
+        <h3>棲地</h3>
+        <p>森林、草原與濕地</p>
+      </div>
+      <div class="info-box">
+        <h3>體型</h3>
+        <p>肩高約 2.5-3 公尺，體重可達 5 噸</p>
+      </div>
+    </div>
+
+    <div class="description">
+      <h3>物種介紹</h3>
+      <p>
+        亞洲象是世界上最大的陸地動物之一，以其強壯的身軀與長鼻著稱。牠們是極具智慧與社會性的動物，擁有良好的記憶力與家族概念。
+        在生態系統中，亞洲象扮演著「森林園丁」的角色，透過覓食與移動幫助植物種子散播。然而，牠們面臨棲地喪失與非法盜獵的威脅，需要我們持續關注與保護。
+      </p>
     </div>
   </div>
+
+
+
+  <footer>
+    © 2025 mamayo媽媽友
+  </footer>
 </body>
 </html>
