@@ -11,14 +11,15 @@
       padding: 0;
     }
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       padding: 1rem;
-      background: linear-gradient(135deg, #f0f4f8, #ffffff);
+      background: linear-gradient(to right, #f2f3f7, #e6e9f0);
+      color: #2c3e50;
     }
     h1 {
       text-align: center;
       margin-bottom: 2rem;
-      color: #333;
+      color: #2c3e50;
       font-weight: 600;
     }
     .grid-container {
@@ -27,35 +28,45 @@
       gap: 1.5rem;
     }
     .grid-item {
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .grid-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     }
     .grid-item img {
       width: 100%;
       height: 150px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
     }
     .grid-item a {
       display: block;
-      margin-top: 0.75rem;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #007BFF;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1a237e;
       text-decoration: none;
+      margin-bottom: 0.3rem;
       transition: color 0.2s;
     }
     .grid-item a:hover {
-      color: #0056b3;
+      color: #3949ab;
       text-decoration: underline;
+    }
+    .difficulty {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .stars {
+      color: #f1c40f;
+      font-size: 1rem;
+      letter-spacing: 2px;
     }
     @media (max-width: 1024px) {
       .grid-container {
@@ -79,35 +90,43 @@
   <div class="grid-container">
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600" alt="圖片1">
-      <a href="detail.html">圖片標題 1</a>
+      <a href="detail.html">太空人</a>
+      <div class="difficulty">難易度：<span class="stars">★★★★☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600" alt="圖片2">
-      <a href="detail.html">圖片標題 2</a>
+      <a href="detail-elephant.html">大象滾球軌道</a>
+      <div class="difficulty">難易度：<span class="stars">★★★★☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600" alt="圖片3">
       <a href="#">圖片標題 3</a>
+      <div class="difficulty">難易度：<span class="stars">★★★★☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=600" alt="圖片4">
       <a href="#">圖片標題 4</a>
+      <div class="difficulty">難易度：<span class="stars">★★☆☆☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?w=600" alt="圖片5">
       <a href="#">圖片標題 5</a>
+      <div class="difficulty">難易度：<span class="stars">★★☆☆☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="圖片6">
       <a href="#">圖片標題 6</a>
+      <div class="difficulty">難易度：<span class="stars">★★☆☆☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="圖片7">
       <a href="#">圖片標題 7</a>
+      <div class="difficulty">難易度：<span class="stars">★★★★☆</span></div>
     </div>
     <div class="grid-item">
       <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600" alt="圖片8">
       <a href="#">圖片標題 8</a>
+      <div class="difficulty">難易度：<span class="stars">★★☆☆☆</span></div>
     </div>
   </div>
 </body>
