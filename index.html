@@ -1,25 +1,116 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/3.3.2/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://unpkg.com/aframe-gesture-detector@3.3.0/dist/aframe-gesture-detector.min.js"></script>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-      <!-- marker 掃描區 -->
-      <a-marker type="pattern" url="pattern-marker.patt">
-        <!-- 3D模型 + 手勢控制 -->
-        <a-entity
-          gltf-model="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-          scale="0.5 0.5 0.5"
-          gesture-handler
-          ></a-entity>
-      </a-marker>
-      <!-- AR camera -->
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Viewer Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: calc(100vh - 70px);
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .left img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .right {
+      width: 300px;
+      background-color: #fafafa;
+      border-left: 1px solid #ddd;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+      height: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .right {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    網頁標題放這裡
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <img src="https://images.unsplash.com/photo-1608224894200-bd56f7a80c77?auto=format&fit=crop&w=800&q=80" alt="3D Model">
+    </div>
+    <div class="right">
+      <table>
+        <tr>
+          <td>文字1</td>
+          <td>文字2</td>
+        </tr>
+        <tr>
+          <td>文字3</td>
+          <td>文字4</td>
+        </tr>
+        <tr>
+          <td>文字5</td>
+          <td>文字6</td>
+        </tr>
+        <tr>
+          <td>文字7</td>
+          <td>文字8</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
 </html>
