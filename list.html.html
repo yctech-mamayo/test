@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圖片展示頁面</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+      background-color: #fafafa;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .grid-item {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .grid-item a {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .grid-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; margin-bottom: 1rem;">圖片格狀展示</h1>
+  <div class="grid-container">
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片1">
+      <a href="#">圖片標題 1</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片2">
+      <a href="#">圖片標題 2</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片3">
+      <a href="#">圖片標題 3</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片4">
+      <a href="#">圖片標題 4</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片5">
+      <a href="#">圖片標題 5</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片6">
+      <a href="#">圖片標題 6</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片7">
+      <a href="#">圖片標題 7</a>
+    </div>
+    <div class="grid-item">
+      <img src="https://via.placeholder.com/300x200" alt="圖片8">
+      <a href="#">圖片標題 8</a>
+    </div>
+  </div>
+</body>
+</html>
