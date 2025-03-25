@@ -18,8 +18,26 @@
       background-color: #333;
       color: white;
       padding: 1rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
       font-size: 1.5rem;
+      margin: 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007BFF;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
     }
     .container {
       display: flex;
@@ -59,23 +77,6 @@
       text-align: center;
       height: 50px;
     }
-    .footer {
-      text-align: center;
-      padding: 1rem;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #007BFF;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -85,12 +86,18 @@
         border-left: none;
         border-top: 1px solid #ddd;
       }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    3D 模型展示-滾球大象
+    <h1>3D 模型展示-滾球大象</h1>
+    <a href="list.html" class="button">返回全部作品</a>
   </header>
   <div class="container">
     <div class="left">
@@ -116,9 +123,6 @@
         </tr>
       </table>
     </div>
-  </div>
-  <div class="footer">
-    <a href="list.html" class="button">返回全部作品</a>
   </div>
 </body>
 </html>
