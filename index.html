@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Viewer Layout</title>
+  <title>3D 模型展示</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: Arial, sans-serif;
     }
-
     header {
       background-color: #333;
       color: white;
@@ -22,14 +21,12 @@
       text-align: center;
       font-size: 1.5rem;
     }
-
     .container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       height: calc(100vh - 70px);
     }
-
     .left {
       flex: 1;
       min-width: 300px;
@@ -39,16 +36,12 @@
       justify-content: center;
       padding: 1rem;
     }
-
-    .left img {
+    model-viewer {
       width: 100%;
-      height: auto;
-      max-height: 100%;
-      object-fit: contain;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      height: 100%;
+      max-height: 500px;
+      background-color: #eee;
     }
-
     .right {
       width: 300px;
       background-color: #fafafa;
@@ -56,24 +49,37 @@
       padding: 1rem;
       overflow-y: auto;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
     }
-
     td {
       border: 1px solid #ccc;
       padding: 0.5rem;
       text-align: center;
       height: 50px;
     }
-
+    .footer {
+      text-align: center;
+      padding: 1rem;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007BFF;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
       }
-
       .right {
         width: 100%;
         border-left: none;
@@ -84,12 +90,11 @@
 </head>
 <body>
   <header>
-    網頁標題放這裡
+    3D 模型展示頁面
   </header>
-
   <div class="container">
     <div class="left">
-      <img src="https://images.unsplash.com/photo-1608224894200-bd56f7a80c77?auto=format&fit=crop&w=800&q=80" alt="3D Model">
+      <model-viewer src="path/to/your-model.glb" alt="3D 模型" auto-rotate camera-controls></model-viewer>
     </div>
     <div class="right">
       <table>
@@ -111,6 +116,9 @@
         </tr>
       </table>
     </div>
+  </div>
+  <div class="footer">
+    <a href="https://example.com" class="button">返回全部作品</a>
   </div>
 </body>
 </html>
