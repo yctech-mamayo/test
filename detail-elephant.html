@@ -28,6 +28,22 @@
       margin: 0;
     }
 
+    .button {
+      background-color: #ffffff;
+      color: #2c3e50;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .button:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+
     .container {
       max-width: 1000px;
       margin: 2rem auto;
@@ -38,15 +54,25 @@
     }
 
     .image-wrapper {
-      text-align: center;
-      margin-bottom: 1.5rem;
+      width: 100%;
+      height: 500px;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
-    .image-wrapper img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0;
+    }
+
+    .interaction-hint {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #666;
+      font-style: italic;
     }
 
     .info-section {
@@ -87,13 +113,16 @@
 
 <body>
   <header>
-    <a href="list.html" class="button">瀏覽其他</a>
-    <h1>3D 模型展示-滾球大象</h1>
+    <a href="list.html" class="button">⬅ 返回清單</a>
+    <h1>3D 模型展示 - 滾球大象</h1>
   </header>
 
   <div class="container">
     <div class="image-wrapper">
-      <model-viewer src="elephant.glb" alt="3D 模型" auto-rotate camera-controls></model-viewer>
+      <model-viewer src="elephant.glb" alt="3D 模型" auto-rotate camera-controls touch-action="pan-y"></model-viewer>
+    </div>
+    <div class="interaction-hint">
+      👉 您可以用手指縮放、旋轉、滑動來互動這個 3D 模型
     </div>
 
     <div class="info-section">
@@ -123,8 +152,6 @@
       </p>
     </div>
   </div>
-
-
 
   <footer>
     © 2025 mamayo媽媽友
