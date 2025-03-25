@@ -9,14 +9,14 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f4f7f9, #e1e8ee);
-      color: #2c3e50;
+      background: linear-gradient(to bottom right, #fff0f5, #eaf4fc);
+      color: #3a3a3a;
       line-height: 1.6;
     }
 
     header {
-      background-color: #2c3e50;
-      color: white;
+      background-color: #f9c8d9;
+      color: #5e3c58;
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
@@ -30,17 +30,18 @@
 
     .button {
       background-color: #ffffff;
-      color: #2c3e50;
+      color: #5e3c58;
       padding: 0.5rem 1rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #f9c8d9;
     }
 
     .button:hover {
-      background-color: #3498db;
+      background-color: #f9c8d9;
       color: #fff;
     }
 
@@ -49,29 +50,29 @@
       margin: 2rem auto;
       padding: 1rem;
       background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
     }
 
     .image-wrapper {
       width: 100%;
       height: 500px;
       margin-bottom: 1rem;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
     }
 
     model-viewer {
       width: 100%;
       height: 100%;
-      background-color: #f0f0f0;
+      background-color: #fff9fb;
     }
 
     .interaction-hint {
       text-align: center;
       margin-top: 0.5rem;
       font-size: 0.95rem;
-      color: #666;
+      color: #7f7f7f;
       font-style: italic;
     }
 
@@ -84,29 +85,54 @@
 
     .info-box {
       flex: 1 1 200px;
-      background: #f0f3f7;
+      background: #fdf1f4;
       padding: 1rem;
-      border-radius: 8px;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
     }
 
     .info-box h3 {
       margin-top: 0;
-      color: #34495e;
+      color: #a0527c;
     }
 
     .description {
       padding: 1rem;
-      background: #f9fafc;
-      border-left: 4px solid #3498db;
-      border-radius: 8px;
+      background: #fdf7f9;
+      border-left: 4px solid #f9a8c4;
+      border-radius: 12px;
+    }
+
+    .blocks-summary {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #fff6f8;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .block-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .block-item img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.5rem;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #aaa;
     }
   </style>
 </head>
@@ -114,7 +140,7 @@
 <body>
   <header>
     <a href="list.html" class="button">返回清單</a>
-    <h1>3D模型展示-滾球大象</h1>
+    <h1>3D模型展示 - 滾球大象</h1>
   </header>
 
   <div class="container">
@@ -122,9 +148,22 @@
       <model-viewer src="elephant.glb" alt="3D 模型" auto-rotate camera-controls touch-action="pan-y"></model-viewer>
     </div>
     <div class="interaction-hint">
-      👉 您可以用手指縮放、旋轉、滑動來互動這個 3D 模型
+      👉 輕觸、拖曳或雙指縮放來探索這個可愛的 3D 模型！
     </div>
-
+    <div class="blocks-summary">
+      <div class="block-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="三角形">
+        <div>三角形：6 個</div>
+      </div>
+      <div class="block-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847974.png" alt="正方形">
+        <div>正方形：2 個</div>
+      </div>
+      <div class="block-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847970.png" alt="大三角形">
+        <div>大三角形：4 個</div>
+      </div>
+    </div>
     <div class="info-section">
       <div class="info-box">
         <h3>分類</h3>
@@ -151,6 +190,8 @@
         在生態系統中，亞洲象扮演著「森林園丁」的角色，透過覓食與移動幫助植物種子散播。然而，牠們面臨棲地喪失與非法盜獵的威脅，需要我們持續關注與保護。
       </p>
     </div>
+
+
   </div>
 
   <footer>
