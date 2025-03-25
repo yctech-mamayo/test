@@ -17,7 +17,7 @@
     }
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
     }
     .grid-item {
@@ -42,41 +42,56 @@
     .grid-item a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <h1 style="text-align:center; margin-bottom: 1rem;">圖片格狀展示</h1>
   <div class="grid-container">
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片1">
+      <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600" alt="圖片1">
       <a href="#">圖片標題 1</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片2">
+      <img src="https://images.unsplash.com/photo-1517817748494-3f624d05fa6a?w=600" alt="圖片2">
       <a href="#">圖片標題 2</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片3">
+      <img src="https://images.unsplash.com/photo-1606761568499-6e0123f0d35b?w=600" alt="圖片3">
       <a href="#">圖片標題 3</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片4">
+      <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?w=600" alt="圖片4">
       <a href="#">圖片標題 4</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片5">
+      <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?w=600" alt="圖片5">
       <a href="#">圖片標題 5</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片6">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="圖片6">
       <a href="#">圖片標題 6</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片7">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="圖片7">
       <a href="#">圖片標題 7</a>
     </div>
     <div class="grid-item">
-      <img src="https://via.placeholder.com/300x200" alt="圖片8">
+      <img src="https://images.unsplash.com/photo-1612832021239-8470f52dd4cc?w=600" alt="圖片8">
       <a href="#">圖片標題 8</a>
     </div>
   </div>
