@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D 模型展示-滾球大象</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007BFF;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: calc(100vh - 70px);
+    }
+    .left {
+      flex: 1;
+      min-width: 300px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      max-height: 500px;
+      background-color: #eee;
+    }
+    .right {
+      width: 300px;
+      background-color: #fafafa;
+      border-left: 1px solid #ddd;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+      height: 50px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .right {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #ddd;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="list.html" class="button">瀏覽其他</a>
+    <h1>3D 模型展示-滾球大象</h1>
+  </header>
+  <div class="container">
+    <div class="left">
+      <model-viewer src="elephant.glb" alt="3D 模型" auto-rotate camera-controls></model-viewer>
+    </div>
+    <div class="right">
+      <table>
+        <tr>
+          <td>正方形</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>三角形</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>大三角</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>文字7</td>
+          <td>文字8</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
