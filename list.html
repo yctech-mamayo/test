@@ -64,13 +64,11 @@
 
     .gallery-item img {
       width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: cover;
+      height: 150px; /* ✅ 限制圖片高度 */
+      object-fit: cover; /* ✅ 確保圖片裁切填滿區塊 */
       border-radius: 12px;
       background-color: #eee;
     }
-
     .difficulty {
       margin-top: 10px;
       font-size: 1em;
