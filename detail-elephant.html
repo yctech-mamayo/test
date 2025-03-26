@@ -6,214 +6,221 @@
   <title>3D 模型展示 - 滾球大象</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    body {
-      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
-      background-color: #fffaf8;
-      color: #444;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .back-button {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: linear-gradient(135deg, #ffe0e8, #ffd1ec);
-      color: #864e58;
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 0.95em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-      z-index: 10;
-    }
+body {
+  font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+  background-color: #fffaf8;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
 
-    .back-button:hover {
-      background: linear-gradient(135deg, #ffcad8, #fcb8d1);
-      color: #733b45;
-    }
+.back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #ffe0e8, #ffd1ec);
+  color: #864e58;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  z-index: 10;
+}
 
-    .logo-container {
-      text-align: center;
-      padding: 24px 0 10px;
-    }
+.back-button:hover {
+  background: linear-gradient(135deg, #ffcad8, #fcb8d1);
+  color: #733b45;
+}
 
-    .logo-container img {
-      max-width: 180px;
-      height: auto;
-    }
+.logo-container {
+  text-align: center;
+  padding: 24px 0 10px;
+}
 
-    header {
-      text-align: center;
-      font-size: 1.8em;
-      color: #d6738c;
-      margin-bottom: 30px;
-      line-height: 1.4;
-    }
+.logo-container img {
+  max-width: 180px;
+  height: auto;
+}
 
-    .page-wrapper {
-      max-width: 960px;
-      margin: 0 auto 40px;
-      background-color: #ffffff;
-      padding: 24px;
-      border-radius: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      position: relative;
-    }
+header {
+  text-align: center;
+  font-size: 1.8em;
+  color: #d6738c;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  padding: 0 16px;
+}
 
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto 40px;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
 
-    .model-wrapper {
-      position: relative;
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-    }
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    model-viewer {
-      width: 100%;
-      height: 480px;
-      background-color: #f9f9fb;
-    }
+.model-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 40px; /* 增加空間，避免浮動區遮住模型 */
+}
 
-    .floating-instruction {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background-color: #f5faff;
-      padding: 14px;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      width: 200px;
-      z-index: 2;
-      font-size: 0.95em;
-    }
+model-viewer {
+  width: 100%;
+  height: 480px;
+  background-color: #f9f9fb;
+  display: block;
+}
 
-    .floating-instruction p {
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
+.floating-instruction {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  background-color: #f5faff;
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 60px;
+  font-size: 0.9em;
+  z-index: 2;
+}
 
-    .circle-buttons {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.floating-instruction p {
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
 
-    .circle-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ffe4f1, #fdd6e2);
-      border: none;
-      color: #6a4e57;
-      font-size: 1em;
-      font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
+.circle-buttons {
+  display: grid;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    .circle-btn:hover {
-      background: linear-gradient(135deg, #ffcadd, #fbb8cd);
-      color: white;
-    }
+.circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffe4f1, #fdd6e2);
+  border: none;
+  color: #6a4e57;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    .description {
-      width: 100%;
-      padding: 24px;
-      background-color: #fefefe;
-      border-radius: 20px;
-      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.03);
-    }
+.circle-btn:hover {
+  background: linear-gradient(135deg, #ffcadd, #fbb8cd);
+  color: white;
+}
 
-    .description h3 {
-      margin-top: 1.5em;
-      color: #666;
-    }
+.description {
+  width: 100%;
+  padding: 24px;
+  background-color: #fefefe;
+  border-radius: 20px;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
 
-    .description p {
-      line-height: 1.7;
-      margin-bottom: 1.2em;
-    }
+.description h3 {
+  margin-top: 1.5em;
+  color: #666;
+}
 
-    .parts-summary {
-      display: flex;
-      justify-content: start;
-      gap: 32px;
-      margin-top: 20px;
-      font-size: 1.1em;
-      flex-wrap: wrap;
-    }
+.description p {
+  line-height: 1.7;
+  margin-bottom: 1.2em;
+}
 
-    .part-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background-color: #fef1f4;
-      padding: 10px 16px;
-      border-radius: 14px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
+.parts-summary {
+  display: flex;
+  justify-content: start;
+  gap: 32px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  flex-wrap: wrap;
+}
 
-    .part-item img {
-      width: 28px;
-      height: 28px;
-    }
+.part-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fef1f4;
+  padding: 10px 16px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
+.part-item img {
+  width: 28px;
+  height: 28px;
+}
 
-    @media (max-width: 768px) {
-      .back-button {
-        top: 10px;
-        left: 10px;
-        padding: 8px 12px;
-      }
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+}
 
-      header {
-        font-size: 1.5em;
-        margin-top: 10px;
-        margin-bottom: 20px;
-      }
+@media (max-width: 768px) {
+  .back-button {
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+  }
 
-      .floating-instruction {
-        width: 88%;
-        right: 6%;
-        top: 12px;
-      }
+  header {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 
-      .circle-buttons {
-        justify-content: center;
-      }
+  .floating-instruction {
+    width: 90%;
+    right: 5%;
+    top: 8px;
+    font-size: 0.9em;
+  }
 
-      .parts-summary {
-        flex-direction: column;
-        gap: 16px;
-      }
+  .parts-summary {
+    flex-direction: column;
+    gap: 16px;
+  }
 
-      .circle-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 0.95em;
-      }
+  .circle-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95em;
+  }
 
-      model-viewer {
-        height: 360px;
-      }
-    }
+  model-viewer {
+    height: 360px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -236,7 +243,7 @@
       <!-- 模型區塊 -->
       <div class="model-wrapper">
         <div class="floating-instruction">
-          <p>組裝步驟<br>從底部往上堆疊</p>
+          <p>步驟教學</p>
           <div class="circle-buttons">
             <button class="circle-btn">1</button>
             <button class="circle-btn">2</button>
@@ -245,6 +252,14 @@
             <button class="circle-btn">5</button>
           </div>
         </div>
+          <p style="display: block;
+    margin: 10px auto;
+    background: #f8e9f1;
+    padding: 10px 30px;
+    color: #ab5454;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;">這邊有個三角形很健康</p>
         <model-viewer src="elephant.glb" alt="滾球大象3D模型" auto-rotate camera-controls ar></model-viewer>
       </div>
     </div>
@@ -256,6 +271,14 @@
         <div class="part-item">
           <img src="triangle-icon.png" alt="三角形">
           <span>三角形：12個</span>
+        </div>
+        <div class="part-item">
+          <img src="square-icon.png" alt="正方形">
+          <span>正方形：18個</span>
+        </div>
+        <div class="part-item">
+          <img src="square-icon.png" alt="正方形">
+          <span>正方形：18個</span>
         </div>
         <div class="part-item">
           <img src="square-icon.png" alt="正方形">
